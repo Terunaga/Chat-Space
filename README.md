@@ -11,8 +11,8 @@
 | confirmation password | string | unique, null false        |
 
 ### users_associations
-* has_many :groups, through: :users_groups
-* has_many :users_groups
+* has_many :groups, through: :chat_groups
+* has_many :chat_groups
 * has_many :messages
 
 
@@ -24,12 +24,12 @@
 | name   | string | unique, null false |
 
 ### groups_associations
-* has_many :users, through: :users_groups
-* has_many :users_groups
+* has_many :users, through: :chat_groups
+* has_many :chat_groups
 * has_many :messages
 
 
-## UsersGroups
+## ChatGroups
 
 ### users_groups_structure
 | column   | type    | constraint                     |
@@ -37,7 +37,7 @@
 | user_id  | integer | foreign_key, index, null false |
 | group_id | integer | foreign_key, index, null false |
 
-### users_groups_associations
+### chat_groups_associations
 * belongs_to :user
 * belongs_to :group
 
