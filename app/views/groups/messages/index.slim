@@ -1,0 +1,28 @@
+.contents
+  .side
+    = render 'groups/side_bar', groups: @groups
+  .main
+    .main__header
+      .main__header__info
+        .main__header__info--groupname
+          = @group.name
+        .main__header__info--members
+          | Members: #{group_users(@group)}
+      .main__header--button
+        = link_to 'Edit', edit_group_path(@group)
+
+    .main__message
+      - 5.times do
+        .massage__list
+          .message__info
+            .message--user
+              | Tech太郎
+            .message--date
+              = Date.today
+          .message__content
+            | ほげほげほげほげほげ
+    .main__form
+      form.main__form--input
+        input type='text' placeholder='type a message' class='input_form'
+          i.fa.fa-picture-o.fa-2 aria-hidden='true' class='image_button'
+        input type='submit' value='Send' class='submit_button'
