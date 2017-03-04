@@ -1,2 +1,8 @@
-@import 'font-awesome';
 @import './reset';
+@import 'font-awesome';
+@import './mixins/clearfix';
+@import './config/variables';
+@import './modules/flash';
+@import './modules/input_box';
+@import './modules/main_contents';
+@import './modules/side_bar';
