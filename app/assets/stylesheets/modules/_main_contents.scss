@@ -1,0 +1,74 @@
+.contents {
+  @include clearfix();
+
+  .main {
+    float: left;
+    width: $contents-width;
+    height: $contents-height;
+    // padding-right: $content-padding;
+    // padding-left: $content-padding;
+
+    &__header {
+      @include clearfix();
+      border-bottom: thin solid #eeeeee;
+      padding-right: $content-padding;
+      padding-left: $content-padding;
+
+      &--button {
+        margin-top: 28px;
+        float: right;
+        color: #38AEF0;
+        padding: 10px $side-padding;
+        border: solid #38AEF0;
+      }
+
+      &__info {
+        float: left;
+        height: $side-bar-menu-height;
+        padding-top: 35px;
+
+        &--groupname {
+          padding-bottom: 12px;
+          font-size: 20px;
+          color: $text-color;
+        }
+
+        &--members {
+          font-size: $message-date-size;
+          color: $sub-font-color;
+        }
+      }
+    }
+
+    &__message {
+      height: $main-message-height;
+      padding: 46px $content-padding 0 $content-padding;
+
+      .message_list {
+        margin-bottom: 40px;
+      }
+
+      .message__info {
+        @include clearfix();
+
+        .message--user {
+          float: left;
+          padding-right: 10px;
+          font-weight: bold;
+          color: $text-color;
+        }
+
+        .message--date {
+          float: left;
+          color: $sub-font-color;
+          font-size: $message-date-size;
+        }
+      }
+
+      .message__content {
+        padding: 10px 0 $content-padding 0;
+        color: $text-color;
+      }
+    }
+  }
+}
