@@ -2,6 +2,7 @@
 $sub-font-color: #999999;
 $message-color: #434A54;
 $side-color: #FFFFFF;
+$text-color: #333333;
 
 
 // Font Sizes
@@ -27,7 +28,8 @@ $contents-width: calc(100vw - 300px);
 
 // height
 $side-bar-height: 100vh;
-$conents-height: 100vh;
+$contents-height: 100vh;
 $side-bar-menu-height: 61px;
 $side-bar-group-height: calc(100vh - 96px);
 $side-bar-group-list-height: 71px;
+$main-message-height: calc(100vh - 90px - 96px - 46px);
