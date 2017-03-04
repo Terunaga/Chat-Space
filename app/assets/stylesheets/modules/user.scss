@@ -1,9 +1,10 @@
 .account-page {
   .account-page__inner {
+    @include clearfix();
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: #fff;
+    background-color: $side-color;
     border: 1px solid #ddd;
     border-radius: 5px;
 
