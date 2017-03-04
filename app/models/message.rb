@@ -4,5 +4,5 @@ class Message < ApplicationRecord
 
   scope :order_by_desc, -> { order(created_at: :desc) }
 
-  validates :text, presence: true
+  validates :text, :group_id, :user_id, presence: true
 end
