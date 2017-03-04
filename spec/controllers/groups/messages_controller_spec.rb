@@ -43,15 +43,12 @@ RSpec.describe Groups::MessagesController, type: :controller do
         expect { post :create, params }.to change(Message, :count).by(1)
       end
 
-      it 'redirects to group_messages_path' do
-      end
-
       it 'shows a flash message to show message was saved successfully' do
         expect(flash[:notice]).to eq 'Message was successfully posted.'
       end
 
       it 'redirects group_messages_path' do
-        expect(response).to redirect_to redirect_to group_messages_path(group)
+        expect(response).to redirect_to group_messages_path(group)
       end
 
     end
@@ -66,7 +63,7 @@ RSpec.describe Groups::MessagesController, type: :controller do
       end
 
       it 'redirects group_messages_path' do
-        expect(response).to redirect_to redirect_to group_messages_path(group)
+        expect(response).to redirect_to group_messages_path(group)
       end
     end
   end
