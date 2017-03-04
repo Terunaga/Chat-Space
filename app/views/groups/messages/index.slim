@@ -1,29 +1,15 @@
 .contents
-  .flash
-    | チャットグループが作成されました。
   .side
-    .side__menu
-      .side__menu--username
-        | ほげ
-      .side__menu--tools
-        i.fa.fa-pencil-square-o.fa-2 aria-hidden='true'
-        i.fa.fa-cog.fa-2 aria-hidden='true'
-    .side__group
-      - 5.times do
-        .side__group__list
-          .side__group__list--groupname
-            | ふがGroup
-          .side__group__list--message
-            | piyopiyo
+    = render 'groups/side_bar', groups: @groups
   .main
     .main__header
       .main__header__info
         .main__header__info--groupname
-          | sample group
+          = @group.name
         .main__header__info--members
-          | members: Your mom
+          | Members: #{group_users(@group)}
       .main__header--button
-        | Edit
+        = link_to 'Edit', edit_group_path(@group)
 
     .main__message
       - 5.times do
