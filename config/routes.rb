@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :chat_groups, only: [:index] do
     collection { get 'index_message' }
   end
+  resources :users, only: [:edit, :update]
 end
