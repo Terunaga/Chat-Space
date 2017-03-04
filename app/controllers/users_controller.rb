@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     if @user.update(update_params)
       redirect_to root_path, notice: 'User update was successful.'
     else
-      redirect_to edit_user_path, alert: 'User update was unsuccessful.'
+      flash[:alert] = 'User update was unsuccessful.'
+      render :edit
     end
   end
 
