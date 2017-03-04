@@ -61,7 +61,7 @@ RSpec.describe Groups::MessagesController, type: :controller do
         post :create, invalid_params
       end
 
-      it 'does notsave the new message into the database' do
+      it 'does not save the new message into the database' do
         expect { post :create, invalid_params }.not_to change(Message, :count)
       end
 
