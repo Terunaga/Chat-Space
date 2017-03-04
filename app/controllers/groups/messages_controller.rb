@@ -12,14 +12,14 @@ class Groups::MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(@group), notice: 'Message was successfully posted.'
     else
-      redirect_to group_messages_path(@group), alert: 'Message was unsuccessful.'
+      redirect_to group_messages_path(@group), alert: @message.errors.full_messages.join('')
     end
   end
 
   private
 
   def set_group
-    @group   = Group.find(params[:group_id])
+    @group = Group.find(params[:group_id])
   end
 
   def create_params
