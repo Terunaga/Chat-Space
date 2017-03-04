@@ -20,6 +20,10 @@
     &--tools {
       color: $side-color;
       float: right;
+
+      .tool_config {
+        color: white;
+      }
     }
   }
 
