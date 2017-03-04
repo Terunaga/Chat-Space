@@ -1,0 +1,8 @@
+.massage__list
+  .message__info
+    .message--user
+      = message.user.name
+    .message--date
+      = format_date(message)
+  .message__content
+    = message.text
