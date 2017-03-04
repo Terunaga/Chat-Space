@@ -5,8 +5,6 @@
     float: left;
     width: $contents-width;
     height: $contents-height;
-    // padding-right: $content-padding;
-    // padding-left: $content-padding;
 
     &__header {
       @include clearfix();
