@@ -8,8 +8,8 @@ class Groups::MessagesController < ApplicationController
   end
 
   def create
-    @message = current_user.messages.build(create_params)
-    if @message.save
+    message = current_user.messages.build(create_params)
+    if message.save
       redirect_to group_messages_path(@group), notice: 'Message was successfully posted.'
     else
       redirect_to group_messages_path(@group), alert: @message.errors.full_messages.join('')
