@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :groups, except: [:destroy, :show]
   scope module: :groups do
     resources :groups, only: :none do
-      resources :messages, only: [:index]
+      resources :messages, only: [:index, :create]
     end
   end
 end
