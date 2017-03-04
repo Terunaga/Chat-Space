@@ -28,4 +28,14 @@ RSpec.describe Message, type: :model do
       end
     end
   end
+
+  describe 'scope' do
+    describe '#order_by_desc' do
+      it 'orders messages by desc' do
+        message1 = create(:message, created_at: Date.today)
+        message2 = create(:message, created_at: Date.yesterday)
+        Message.order_by_desc.to match_array([message1, message2])
+      end
+    end
+  end
 end
