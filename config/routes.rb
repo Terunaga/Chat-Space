@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'chat_groups#index'
+  resources :chat_groups, only: [:index] do
+    collection { get 'index_message' }
+  end
 end

@@ -1,0 +1,48 @@
+.side {
+  float: left;
+  width: $side-bar-width;
+
+  &__menu {
+    @include clearfix();
+    height: $side-bar-menu-height;
+    background-color: $side-menu-bg-color;
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+    padding-top: 35px;
+    font-size: 16px;
+
+    &--username {
+      color: $side-color;
+      font-weight: bold;
+      float: left;
+    }
+
+    &--tools {
+      color: $side-color;
+      float: right;
+    }
+  }
+
+  &__group {
+    height: $side-bar-group-height;
+    background-color: $side-group-list-bg-color;
+
+    &__list {
+      height: $side-bar-group-list-height;
+      padding-top: $side-padding;
+      padding-left: $side-padding;
+
+      &--groupname {
+        font-size: 15px;
+        color: $side-color;
+        padding-bottom: 5px;
+      }
+
+      &--message {
+        font-size: 11px;
+        color: $side-color;
+        padding-bottom: $side-padding;
+      }
+    }
+  }
+}

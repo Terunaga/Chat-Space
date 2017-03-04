@@ -1,0 +1,42 @@
+.contents
+  .flash
+    | チャットグループが作成されました。
+  .side
+    .side__menu
+      .side__menu--username
+        | ほげ
+      .side__menu--tools
+        i.fa.fa-pencil-square-o.fa-2 aria-hidden='true'
+        i.fa.fa-cog.fa-2 aria-hidden='true'
+    .side__group
+      - 5.times do
+        .side__group__list
+          .side__group__list--groupname
+            | ふがGroup
+          .side__group__list--message
+            | piyopiyo
+  .main
+    .main__header
+      .main__header__info
+        .main__header__info--groupname
+          | sample group
+        .main__header__info--members
+          | members: Your mom
+      .main__header--button
+        | Edit
+
+    .main__message
+      - 5.times do
+        .massage__list
+          .message__info
+            .message--user
+              | Tech太郎
+            .message--date
+              = Date.today
+          .message__content
+            | ほげほげほげほげほげ
+    .main__form
+      form.main__form--input
+        input type='text' placeholder='type a message' class='input_form'
+          i.fa.fa-picture-o.fa-2 aria-hidden='true' class='image_button'
+        input type='submit' value='Send' class='submit_button'

@@ -1,0 +1,26 @@
+.main__form {
+
+  &--input {
+    background-color: #AAAAAA;
+    height: 50px;
+    padding: $side-padding $content-padding $side-padding $content-padding;
+  }
+
+  .input_form {
+    height: 50px;
+    padding-left: 10px;
+    width: 90%;
+  }
+
+  .image_button {
+    padding-left: 10px;
+  }
+
+  .submit_button {
+    background-color: #38AEF0;
+    color: $side-color;
+    padding: 10px 30px 10px 30px;
+    float: right;
+    border: none;
+  }
+}
