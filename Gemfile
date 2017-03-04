@@ -35,6 +35,7 @@ gem "haml-rails", "~> 0.9"
 gem 'slim'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'erb2haml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,6 +44,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -55,8 +58,6 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
-  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
