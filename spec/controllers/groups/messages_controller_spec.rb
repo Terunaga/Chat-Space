@@ -24,8 +24,16 @@ RSpec.describe Groups::MessagesController, type: :controller do
       expect(assigns(:message)).to be_a_new Message
     end
 
+    it 'assigns the requested messages to @messages' do
+      expect(assigns(:messages)).to include message
+    end
+
     it 'assigns the requested group to @group' do
       expect(assigns(:group)).to eq group
+    end
+
+    it 'assigns the requested groups to @groups' do
+      expect(assigns(:groups)).to include group
     end
 
     it 'renders the :index template' do
