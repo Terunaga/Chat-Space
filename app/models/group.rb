@@ -5,4 +5,6 @@ class Group < ApplicationRecord
   has_many :chat_groups
 
   accepts_nested_attributes_for :chat_groups
+
+  scope :order_by_desc, -> { order(created_at: :desc) }
 end
