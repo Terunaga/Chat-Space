@@ -8,7 +8,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.chat_groups.build
   end
 
   def create
