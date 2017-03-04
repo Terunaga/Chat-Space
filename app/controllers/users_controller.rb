@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i(edit update)
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(update_params)
