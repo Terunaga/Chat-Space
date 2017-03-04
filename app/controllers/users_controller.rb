@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.update(update_params)
       redirect_to root_path, notice: 'User update was successful.'
     else
-      redirect_to edit_user_path, notice: 'User update was unsuccessful.'
+      redirect_to edit_user_path, alert: 'User update was unsuccessful.'
     end
   end
 
@@ -19,6 +19,6 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :email)
   end
 end
