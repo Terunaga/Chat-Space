@@ -62,6 +62,10 @@ RSpec.describe Groups::MessagesController, type: :controller do
         expect { post :create, invalid_params }.not_to change(Message, :count)
       end
 
+      it 'shows a flash message to show message was not saved successfully' do
+        expect(flash[:alert]).to eq 'Textを入力してください。'
+      end
+
       it 'redirects to group_messages_path' do
         expect(response).to redirect_to group_messages_path(group)
       end

@@ -12,7 +12,7 @@ class Groups::MessagesController < ApplicationController
     if message.save
       redirect_to group_messages_path(@group), notice: 'Message was successfully posted.'
     else
-      redirect_to group_messages_path(@group), alert: @message.errors.full_messages.join('')
+      redirect_to group_messages_path(@group), alert: message.errors.full_messages.join('')
     end
   end
 
