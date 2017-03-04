@@ -31,7 +31,7 @@
 
 ## ChatGroups
 
-### users_groups_structure
+### chat_groups_structure
 | column   | type    | constraint                     |
 |----------|---------|--------------------------------|
 | user_id  | integer | foreign_key, index, null false |
