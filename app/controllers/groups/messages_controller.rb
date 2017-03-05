@@ -4,23 +4,14 @@ class Groups::MessagesController < ApplicationController
   def index
     @groups   = current_user.groups.order_by_desc
     @message  = Message.new
-    @messages = @group.messages.order_by_asc
+    @messages = @group.messages
   end
 
   def create
     message = current_user.messages.build(create_params)
-    if message.save
-      respond_to do |format|
-        format.html {
-          redirect_to group_messages_path(@group),
-          notice: 'Message was successfully posted.'
-        }
-        format.json {
-          render json: message
-        }
-      end
-    else
-      redirect_to group_messages_path(@group), alert: message.errors.full_messages.join('')
+    respond_to do |format|
+      format.html { }
+      format.json { render json: message }
     end
   end
 
