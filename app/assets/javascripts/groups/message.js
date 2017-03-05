@@ -1,7 +1,13 @@
 $(function() {
-  function buildHTML(data) {
-    console.log(data.text);
-    var html = $('<li class="message__list"><div class="message__content">').append(data.text);
+  function buildHTML(data, user_name) {
+    var html =
+    '<li class="message__list">'
+    + '<div class="message__info">'
+      + '<div class="message--user">' + user_name + '</div>'
+      + '<div class="message--date">' + dateToFormatString(new Date(data.created_at), '%YYYY%/%MM%/%DD% %HH%:%mm%:%ss%') + '</div>'
+    + '</div>'
+    + '<div class="message__content">' + data.text + '</div>'
+    + '</li>';
     return html;
   }
 
@@ -10,11 +16,11 @@ $(function() {
       e.preventDefault();
       var textField = $('.input_form');
       var text      = textField.val();
-      var group_id  = textField.data('group').id;
+      var user_name = textField.data('user').name;
 
       $.ajax({
         type: 'POST',
-        url: '/groups/' + group_id + '/messages.json',
+        url: './messages.json',
         data: {
           message: {
             text: text
@@ -23,7 +29,7 @@ $(function() {
         dataType: 'json'
       })
       .done(function(data) {
-        var html = buildHTML(data)
+        var html = buildHTML(data, user_name)
         $('.main__message').append(html);
         textField.val('');
       })
