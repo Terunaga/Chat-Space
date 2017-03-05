@@ -9,6 +9,7 @@ class Groups::MessagesController < ApplicationController
 
   def create
     message = current_user.messages.build(create_params)
+    message.save
     respond_to do |format|
       format.html { }
       format.json { render json: message }
