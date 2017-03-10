@@ -27,7 +27,8 @@
           %p.chat-group-user__name
             = user.name
             = hidden_field_tag 'group[user_ids][]', user.id
-          %p.chat-group-button.delete 削除
+          - unless current_user.id == user.id
+            %p.chat-group-button.delete 削除
 
   .chat-group-form__field
     .chat-group-form__field--left
