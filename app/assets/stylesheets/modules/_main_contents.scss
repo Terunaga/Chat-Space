@@ -46,6 +46,7 @@
     &__message {
       height: $main-message-height;
       padding: 46px $content-padding 0 $content-padding;
+      overflow: scroll;
 
       .message_list {
         margin-bottom: 40px;
