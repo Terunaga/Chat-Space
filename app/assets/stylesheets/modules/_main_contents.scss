@@ -18,6 +18,11 @@
         color: #38AEF0;
         padding: 10px $side-padding;
         border: solid #38AEF0;
+
+        a {
+          text-decoration: none;
+          color: $send-button-color;
+        }
       }
 
       &__info {
