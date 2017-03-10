@@ -82,6 +82,26 @@
       float: left;
     }
 
+    .chat-group-button {
+      border: none;
+      background-color: $side-color;
+      font-size: 12px;
+      border-top: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .add {
+      float: right;
+      color: $send-button-color;
+      cursor: pointer;
+    }
+
+    .delete {
+      float: right;
+      color: #f00000;
+      cursor: pointer;
+    }
+
     .chat-group-user__btn {
       float: right;
       display: inline-block;

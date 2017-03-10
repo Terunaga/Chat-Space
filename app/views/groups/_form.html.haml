@@ -3,16 +3,33 @@
     .chat-group-form__field--left
       = f.label :name, :グループ名, class: 'chat-group-form__label', for: 'group[name]'
     .chat-group-form__field--right
-      = f.text_field :name, class: 'chat-group-form__input', id: 'chat_group_name', placeholder: 'グループ名を入力してください'
-  .chat-group-form__field
+      = f.text_field :name, class: 'chat-group-form__input', placeholder: 'グループ名を入力してください'
+
+  .chat-group-form__field#display_list
+    .chat-group-form__field--left
+      %label.chat-group-form__label チャットメンバーを追加
+    .chat-group-form__field--right#member
+      .chat-group-form__search
+        %input.chat-group-form__input#user-search-field{ placeholder: '追加したいユーザー名を入力してください' }
+
+  .chat-group-form__field#user_list
     .chat-group-form__field--left
       %label.chat-group-form__label チャットメンバー
-    .chat-group-form__field--right
-      #chat-group-users
-        #chat-group-user-22.chat-group-user
-          = f.collection_check_boxes :user_ids, @users, :id, :name do |g|
-            %p.chat-group-user__name
-              = g.label { g.check_box + g.text }
+    - if action_name == 'new'
+      .chat-group-form__field--right
+        .chat-group-user
+          %p.chat-group-user__name
+            = current_user.name
+            = hidden_field_tag 'group[user_ids][]', current_user.id
+    - group.users.each do |user|
+      .chat-group-form__field--right
+        .chat-group-user
+          %p.chat-group-user__name
+            = user.name
+            = hidden_field_tag 'group[user_ids][]', user.id
+          - unless current_user.id == user.id
+            %p.chat-group-button.delete 削除
+
   .chat-group-form__field
     .chat-group-form__field--left
     .chat-group-form__field--right
