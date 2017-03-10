@@ -26,8 +26,9 @@ $(function() {
       dataType: 'json'
     })
     .done(function(messages) {
-      newMessage = fetchNewMessages(messages)
-      $.each(messages, function(index, message) {
+      var newMessages = fetchNewMessages(messages)
+
+      $.each(newMessages, function(index, message) {
         var user = message.user.name;
         var text = message.text;
         var date = dateToFormatString(new Date(message.created_at), '%YYYY%/%MM%/%DD% %HH%:%mm%:%ss%');
