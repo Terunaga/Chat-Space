@@ -5,13 +5,16 @@ class Groups::MessagesController < ApplicationController
     @groups   = current_user.groups.order_by_desc
     @message  = Message.new
     @messages = @group.messages
+    respond_to do |format|
+      format.html
+      format.json { render json: @messages.to_json(include: :user) }
+    end
   end
 
   def create
     message = current_user.messages.build(create_params)
     message.save
     respond_to do |format|
-      format.html { }
       format.json { render json: message }
     end
   end
