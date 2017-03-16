@@ -5,7 +5,7 @@ class Groups::MessagesController < ApplicationController
   def index
     @groups   = current_user.groups.order_by_desc
     @message  = Message.new
-    @messages = @group.messages
+    @messages = @group.messages.includes(:user)
     respond_to do |format|
       format.html
       format.json { render json: @messages.to_json(include: :user) }
