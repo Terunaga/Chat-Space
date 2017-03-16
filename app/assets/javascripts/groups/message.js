@@ -6,7 +6,10 @@ $(function() {
       + '<div class="message--user">' + user_name + '</div>'
       + '<div class="message--date">' + dateToFormatString(new Date(data.created_at), '%YYYY%/%MM%/%DD% %HH%:%mm%:%ss%') + '</div>'
     + '</div>'
-    + '<div class="message__content">' + data.text + '</div>'
+    + '<div class="message__content">'
+      + '<p>' + data.text + '</p>'
+      + '<p><img src="' + data.image.url + '"></p>'
+    + '</div>'
     + '</li>';
     return html;
   }
@@ -16,23 +19,30 @@ $(function() {
     var textField = $('.input_form');
     var text      = textField.val();
     var user_name = textField.data('user').name;
+    var image     = new FormData($('#message_image')[0].files[0]);
+
+
+
+    var form = $('#new_message')[0];
+
+    var formData = new FormData(form);
 
     $.ajax({
       type: 'POST',
       url: './messages.json',
-      data: {
-        message: {
-          text: text
-        }
-      },
+      data: formData,
+      processData: false,
+      contentType: false,
       dataType: 'json'
     })
     .done(function(data) {
+      debugger;
       var html = buildHTML(data, user_name)
       $('.main__message').append(html);
       textField.val('');
     })
-    .fail(function() {
+    .fail(function(data) {
+      debugger;
       alert("You ain't gonna send that message baby.");
     });
   });

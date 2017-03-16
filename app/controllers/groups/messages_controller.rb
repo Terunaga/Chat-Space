@@ -12,10 +12,10 @@ class Groups::MessagesController < ApplicationController
   end
 
   def create
-    message = current_user.messages.build(create_params)
-    message.save
+    @message = current_user.messages.build(create_params)
+    @message.save
     respond_to do |format|
-      format.json { render json: message }
+      format.json
     end
   end
 
@@ -26,6 +26,6 @@ class Groups::MessagesController < ApplicationController
   end
 
   def create_params
-    params.require(:message).permit(:text).merge(group_id: params[:group_id])
+    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id])
   end
 end
