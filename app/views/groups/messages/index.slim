@@ -17,7 +17,7 @@
     .main__form
       .main__form--input
         = form_for @message, url: group_messages_path do |f|
-          = f.text_field :text, placeholder: 'type a message', class: 'input_form', data: { user: current_user }
+          = f.text_field :text, placeholder: 'type a message', class: 'input_form'
           = f.file_field :image
           i.fa.fa-picture-o.fa-2 aria-hidden='true' class='image_button'
           = f.submit 'Send', class: 'submit_button'
