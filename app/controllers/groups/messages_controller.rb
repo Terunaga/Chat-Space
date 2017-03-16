@@ -13,17 +13,10 @@ class Groups::MessagesController < ApplicationController
   end
 
   def create
-    message = current_user.messages.build(create_params)
-    message.save
+    @message = current_user.messages.build(create_params)
+    @message.save
     respond_to do |format|
-      format.json do
-        render json: {
-          text:  message.text,
-          image: message.image,
-          user:  message.user.name,
-          date:  format_date(message)
-        }
-      end
+      format.json
     end
   end
 
