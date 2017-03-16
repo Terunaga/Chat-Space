@@ -25,9 +25,8 @@ $(function() {
   $('.submit_button').on('click', function(e) {
     e.preventDefault();
 
-    var textField = $('.input_form');
-    var form      = $('#new_message')[0];
-    var formData  = new FormData(form);
+    var form     = $('#new_message')[0];
+    var formData = new FormData(form);
 
     $.ajax({
       type:        'POST',
@@ -40,7 +39,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.main__message').append(html);
-      textField.val('');
+      $('.input_form').val('');
       scrollToBottom();
     })
     .fail(function() {
