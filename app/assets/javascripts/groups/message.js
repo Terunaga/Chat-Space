@@ -1,4 +1,8 @@
 $(function() {
+  $(function() {
+    scrollToBottom();
+  });
+
   function buildHTML(data) {
     var html =
     '<li class="message__list">'
@@ -12,6 +16,10 @@ $(function() {
     + '</div>'
     + '</li>';
     return html;
+  }
+
+  function scrollToBottom() {
+    $('.main__message').scrollTop( $('.main__message').height() );
   }
 
   $('.submit_button').on('click', function(e) {
@@ -33,8 +41,9 @@ $(function() {
       var html = buildHTML(data);
       $('.main__message').append(html);
       textField.val('');
+      scrollToBottom();
     })
-    .fail(function(data) {
+    .fail(function() {
       alert("You ain't gonna send that message baby.");
     });
   });
