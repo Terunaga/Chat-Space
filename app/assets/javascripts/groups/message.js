@@ -36,13 +36,11 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data) {
-      debugger;
       var html = buildHTML(data, user_name)
       $('.main__message').append(html);
       textField.val('');
     })
     .fail(function(data) {
-      debugger;
       alert("You ain't gonna send that message baby.");
     });
   });
