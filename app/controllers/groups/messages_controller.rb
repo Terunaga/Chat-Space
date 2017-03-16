@@ -16,7 +16,6 @@ class Groups::MessagesController < ApplicationController
     message = current_user.messages.build(create_params)
     message.save
     respond_to do |format|
-      format.html
       format.json do
         render json: {
           text:  message.text,
