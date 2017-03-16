@@ -21,10 +21,3 @@
           = f.file_field :image
           i.fa.fa-picture-o.fa-2 aria-hidden='true' class='image_button'
           = f.submit 'Send', class: 'submit_button'
-
-javascript:
-  $(function() {
-    $('.image_button').on('click', function() {
-      $('#message_image').click();
-    });
-  });

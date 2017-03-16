@@ -3,6 +3,12 @@ $(function() {
     scrollToBottom();
   });
 
+  $(function() {
+    $('.image_button').on('click', function() {
+      $('#message_image').click();
+    });
+  });
+
   function buildHTML(data) {
     var html =
     '<li class="message__list">'
