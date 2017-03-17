@@ -5,4 +5,5 @@ li.massage__list
     .message--date
       = format_date(message)
   .message__content
-    = message.text
+    p = message.text
+    p = image_tag message.image

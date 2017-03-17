@@ -9,11 +9,18 @@
   .input_form {
     height: 50px;
     padding-left: 10px;
-    width: 90%;
+    width: 92%;
   }
 
   .image_button {
-    padding-left: 10px;
+    position: absolute;
+    right: 180px;
+    bottom: 32px;
+    cursor: pointer;
+  }
+
+  #message_image {
+    display: none;
   }
 
   .submit_button {
